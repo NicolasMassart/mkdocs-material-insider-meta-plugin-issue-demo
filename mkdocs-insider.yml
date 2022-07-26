@@ -1,14 +1,16 @@
 ---
-# Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
-# the License. You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
-# an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-INHERIT: mkdocs.yml # DO NOT MODIFY THIS LINE
+# This file is used to split insider and non insider configurations
+INHERIT: mkdocs.yml
 
-#plugins:
-#  meta:
-#    meta_file: '**/.meta.yml'
+# Tag index page fails to display all pages when you have the meta plugin here.
+# Because Meta is an insider only plugin, it has to be isolated in a specific config.
+#
+# uncomment the same lines in mkdocs.yml
+# and the tag index pages will display all
+# pages with tags even if the tags are set from the meta file
+#
+# note that the meta plugin is well taken into account when added here because, so no conf syntax issue, if you
+# comment it here in addition to commenting it in mkdocs.yml, then pages don't have tags except
+# third tag page that have them directly in the meta header. So it's working, but not completely.
+plugins:
+  meta: {}

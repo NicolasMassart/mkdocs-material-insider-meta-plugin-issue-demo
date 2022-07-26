@@ -1,14 +1,18 @@
 # Mkdocs Material Insider Meta and Tag index issue demo project
 
-## Run the example
+## Install the example
 
-1. create a python virtual env and activate it
-2.
+1. create a python virtual env and activate it.
+1. run:
     ```bash
-    export MKDOCS_GITHUB_TOKEN=<your Github token to access insider repos>
-    export MKDOCS_GITHUB_USER=<your Github user name to access insider repos>
+    MKDOCS_GITHUB_TOKEN=<your Github token to access insider repos> \
     pip install -r requirements.txt
     ```
-3. run `mkdocs serve`
-4. navigate to tags index and notice the pages with first and second tags are not visible but only
-    third tag is displayed in the TOC beacause it's the only one to be defined directly in the page.
+
+## Run the example
+
+1. run `mkdocs serve -f mkdocs-insider.yml`
+1. navigate to tags index page and notice the pages with first and second tags are not visible but only
+    third tag page is displayed in the TOC because it's the only one to have tags defined directly in the page.
+1. Uncomment the Meta config in `mkdocs.yml` and wait for the site to recompile and refresh
+     and go to the tags index page again. All the pages are now listed.

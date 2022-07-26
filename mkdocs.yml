@@ -1,29 +1,22 @@
 ---
 # Project information
 site_name: MkDocs Material Meta and tag index issue demo
-site_description: Demo site to demonstrate how the issue happens
-site_author: Nicolas MASSART
 
 theme:
   name: material
-plugins:
-  search: {}
-  meta:
-    meta_file: '**/.meta.yml'
-  tags:
-    tags_file: tags.md
+
 nav:
   - First tag: first-tag/index.md
   - Second tag: second-tag/index.md
   - Third tag: index.md
   - Tags index: tags.md
 
-extra:
+plugins:
+  # it works when you have the meta plugin here
+  # uncomment the following `meta: {}` line
+  # and the tag index pages will display all pages
+  # with tags even if the tags are set from the meta file
+#  meta: {}
+  # tags plugin config has to be after the meta for tag index to work with meta defined tags
   tags:
-    first-tag: first
-    second-tag: second
-    third-tag: third
-
-watch:
-  - mkdocs.yml
-  - mkdocs-insider.yml
+    tags_file: tags.md
