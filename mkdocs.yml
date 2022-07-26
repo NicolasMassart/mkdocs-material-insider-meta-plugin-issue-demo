@@ -1,0 +1,177 @@
+---
+# Project information
+site_name: MkDocs Material Meta and tag index issue demo
+site_description: Demo site to demonstrate how the issue happens
+site_author: Nicolas MASSART
+
+theme:
+  name: material
+  features:
+    - content.code.annotate
+    - content.tooltips
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+  icon:
+    tag:
+      first: octicons/tag-24
+      second: material/tag
+      third: material/tag-plus
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: blue-grey
+      accent: teal
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: blue-grey
+      accent: teal
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: blue-grey
+      accent: teal
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+plugins:
+  search:
+    lang: 'en'
+    separator: '[\s\-\.\_]+'
+#  markdownextradata: {}
+#  exclude:
+#    glob:
+#      - global/*
+  git-revision-date-localized:
+    locale: en
+  minify:
+    minify_html: true
+    minify_js: true
+    htmlmin_opts:
+      remove_comments: true
+  meta:
+    meta_file: '**/.meta.yml'
+  tags:
+    tags_file: tags.md
+
+nav:
+  - First tag: first-tag/index.md
+  - Second tag: second-tag/index.md
+  - Third tag: index.md
+  - Tags index: tags.md
+
+extra:
+  # Doc Repository
+  code_repo_name: hyperledger/besu
+  code_repo_url: https://github.com/hyperledger/besu/
+  latest_version_warning:
+    url_contains: /latest/
+    text: 'You are reading Hyperledger Besu development version documentation and
+    some displayed features may not be available in the stable release.
+    You can switch to stable version using the version box at screen bottom.'
+  page_edit_button: yes
+  logo_is_text: true
+  support:
+    chat: https://discord.gg/hyperledger
+    email: besu@lists.hyperledger.org
+    website: https://www.hyperledger.org/projects/besu
+    issues: https://github.com/hyperledger/besu/issues
+    doc_issues: https://github.com/hyperledger/besu-docs/issues/new/choose
+  analytics:
+    provider: google
+    property: 'G-23GVTD3LEQ'
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using suggesting a change our <a href="..." target=_blank>feedback form</a>.
+  logo_regular: logo.svg
+  logo_reversed: logo-reversed.svg
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for.
+      <br/>
+      With your consent, you're helping us to make our documentation better.
+      <br/>
+      After this initial choice, you can manage your preferences by clicking on "Change cookie settings" in the page footer.
+    actions:
+      - accept
+      - reject
+      - manage
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hyperledger/besu/
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/hyperledger
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/hyperledger/besu/tags
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/HyperledgerBesu
+  tags:
+    first-tag: first
+    second-tag: second
+    third-tag: third
+
+markdown_extensions:
+  - toc:
+      permalink: 
+      toc_depth: 3
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets:
+      base_path: docs
+      check_paths: true
+  - admonition
+  - footnotes
+  - def_list
+  - abbr
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - meta
+  - smarty
+  - attr_list
+  - md_in_html
