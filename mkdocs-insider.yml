@@ -9,19 +9,6 @@
 # specific language governing permissions and limitations under the License.
 INHERIT: mkdocs.yml # DO NOT MODIFY THIS LINE
 
-plugins:
-  meta:
-    meta_file: '**/.meta.yml'
-
-extra:
-  # indicates to the templating system that the current build uses insider
-  # used to display insider only features in templates and prevent build fail on the normal version.
-  is_insider: true
-
-# The following has to be in this file and mkdocs.yml file because
-# readthedocs.org is overriding it wrong if not in the initial config file but in a child file.
-# The side effect is that it also allows us to have different scripts and CSS for insider theme
-extra_css:
-  - assets/stylesheets/custom_theme.css
-extra_javascript:
-  - assets/javascripts/custom_theme.js
+#plugins:
+#  meta:
+#    meta_file: '**/.meta.yml'
