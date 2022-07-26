@@ -1,5 +1,7 @@
 # Mkdocs Material Insider Meta and Tag index issue demo project
 
+See https://github.com/squidfunk/mkdocs-material/issues/4167
+
 ## Install the example
 
 1. create a python virtual env and activate it.
